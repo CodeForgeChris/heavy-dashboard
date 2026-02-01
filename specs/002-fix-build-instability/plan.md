@@ -1,7 +1,7 @@
 # Implementation Plan: Ensure Build Stability
 
-**Branch**: `001-fix-build-instability` | **Date**: 2026-02-01 | **Spec**: /home/chris/Projekts/heavy/specs/001-fix-build-instability/spec.md
-**Input**: Feature specification from `/specs/001-fix-build-instability/spec.md`
+**Branch**: `002-fix-build-instability` | **Date**: 2026-02-01 | **Spec**: /home/chris/Projekts/heavy/specs/002-fix-build-instability/spec.md
+**Input**: Feature specification from `/specs/002-fix-build-instability/spec.md`
 
 **Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
 
@@ -45,7 +45,7 @@ This plan addresses the critical need to ensure that the project's dependencies 
 ### Documentation (this feature)
 
 ```text
-specs/001-fix-build-instability/
+specs/002-fix-build-instability/
 ├── plan.md              # This file (/speckit.plan command output)
 ├── research.md          # Phase 0 output (/speckit.plan command)
 └── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)

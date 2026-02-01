@@ -1,6 +1,6 @@
 # Feature Specification: Ensure Build Stability
 
-**Feature Branch**: `001-fix-build-instability`
+**Feature Branch**: `002-fix-build-instability`
 **Created**: 2026-02-01
 **Status**: Draft
 **Input**: User description: "currently the app does not install the dependencies; this should always be possible to run and build the application."

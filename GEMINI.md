@@ -4,7 +4,7 @@ Auto-generated from all feature plans. Last updated: 2026-02-01
 
 ## Active Technologies
 
-- TypeScript, Node.js (via npm) + npm (package manager), Vite (build tool), SvelteKit (framework) (001-fix-build-instability)
+- TypeScript, Node.js (via npm) + npm (package manager), Vite (build tool), SvelteKit (framework) (002-fix-build-instability)
 
 ## Project Structure
 
@@ -22,8 +22,8 @@ npm test && npm run lint
 TypeScript, Node.js (via npm): Follow standard conventions
 
 ## Recent Changes
-
-- 001-fix-build-instability: Added TypeScript, Node.js (via npm) + npm (package manager), Vite (build tool), SvelteKit (framework)
+- 001-gym-dashboard: base dashboard and setup 
+- 002-fix-build-instability: Added TypeScript, Node.js (via npm) + npm (package manager), Vite (build tool), SvelteKit (framework)
 
 <!-- MANUAL ADDITIONS START -->
 <!-- MANUAL ADDITIONS END -->
