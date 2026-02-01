@@ -1,0 +1,25 @@
+# SvelteKit
+/node_modules
+/.svelte-kit
+/build
+/dist
+/package
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+*.log.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Misc
+*.tmp
+*.swp
+.vscode/
+.idea/
