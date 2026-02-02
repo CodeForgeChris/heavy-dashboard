@@ -3,6 +3,7 @@
 Auto-generated from all feature plans. Last updated: 2026-02-01
 
 ## Active Technologies
+- TypeScript 5.2.2 + Svelte, Vite, Node.js (003-run-init-page)
 
 - TypeScript, Node.js (via npm) + npm (package manager), Vite (build tool), SvelteKit (framework) (002-fix-build-instability)
 
@@ -22,6 +23,7 @@ npm test && npm run lint
 TypeScript, Node.js (via npm): Follow standard conventions
 
 ## Recent Changes
+- 003-run-init-page: Added TypeScript 5.2.2 + Svelte, Vite, Node.js
 - 001-gym-dashboard: base dashboard and setup 
 - 002-fix-build-instability: Added TypeScript, Node.js (via npm) + npm (package manager), Vite (build tool), SvelteKit (framework)
 
