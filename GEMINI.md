@@ -26,4 +26,5 @@ TypeScript, Node.js (via npm): Follow standard conventions
 - 002-fix-build-instability: Added TypeScript, Node.js (via npm) + npm (package manager), Vite (build tool), SvelteKit (framework)
 
 <!-- MANUAL ADDITIONS START -->
+"Prefer nohup <cmd> & for long-running dev servers
 <!-- MANUAL ADDITIONS END -->

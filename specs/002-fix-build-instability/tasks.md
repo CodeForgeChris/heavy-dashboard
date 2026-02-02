@@ -43,8 +43,8 @@ The tasks within User Story 1 can be executed sequentially to ensure the fix is 
 
 - [X] T001 [US1] Downgrade `vite` dependency to a compatible `^5.x.x` version in `package.json`
 - [X] T002 [US1] Run `npm install` to update dependencies and generate `package-lock.json`
-- [ ] T003 [US1] Run `npm run build` to verify the application builds without errors (in_progress)
-- [ ] T004 [US1] Add an integration test script to verify `npm install` and `npm run build` success in `tests/integration/build-stability.test.ts`
+- [X] T003 [US1] Run `npm run build` to verify the application builds without errors
+- [X] T004 [US1] Add an integration test script to verify `npm install` and `npm run build` success in `tests/integration/build-stability.test.ts`
 
 ---
 
