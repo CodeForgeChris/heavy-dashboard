@@ -1,6 +1,6 @@
 
-
-import type { Workout, Exercise, Set } from '../state/dashboard';
+import { dev } from '$app/environment';
+import type { Workout, Exercise, Set } from '../state/dashboard.svelte';
 
 const HEVY_API_URL = 'https://api.hevyapp.com/v1/workouts';
 

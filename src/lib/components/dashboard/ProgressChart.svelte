@@ -1,6 +1,6 @@
 <!-- src/lib/components/dashboard/ProgressChart.svelte -->
 <script lang="ts">
-  import type { Workout } from '$lib/state/dashboard';
+  import type { Workout } from '$lib/state/dashboard.svelte';
 
   type Props = {
     workouts: Workout[];

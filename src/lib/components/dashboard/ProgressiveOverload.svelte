@@ -1,6 +1,6 @@
 <!-- src/lib/components/dashboard/ProgressiveOverload.svelte -->
 <script lang="ts">
-  import type { Workout } from '$lib/state/dashboard';
+  import type { Workout } from '$lib/state/dashboard.svelte';
   import Card from '$lib/components/ui/Card.svelte';
 
   type Props = {

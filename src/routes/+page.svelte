@@ -1,22 +1,36 @@
 <script lang="ts">
-  import { dashboardState } from '$lib/state/dashboard';
+  import { browser } from '$app/environment';
+  import { onMount } from 'svelte';
+  import { dashboardState } from '$lib/state/dashboard.svelte';
   import Card from '$lib/components/ui/Card.svelte';
   import ProgressChart from '$lib/components/dashboard/ProgressChart.svelte';
-  import GoalTree from '$lib/components/dashboard/GoalTree.svelte';
   import ProgressiveOverload from '$lib/components/dashboard/ProgressiveOverload.svelte';
   import Modal from '$lib/components/ui/Modal.svelte';
   import GoalForm from '$lib/components/dashboard/GoalForm.svelte';
-  import { modalStore } from 'skeleton-ui';
+  import type { PageData } from './$types';
 
-  const { workouts, goals, isLoading, error, loadWorkouts } = dashboardState;
+  export let data: PageData;
+  
+  let GoalTree = null;
 
-  loadWorkouts();
+  onMount(async () => {
+    const module = await import('$lib/components/dashboard/GoalTree.svelte');
+    GoalTree = module.default;
+  });
 
-  function openGoalModal() {
-    modalStore.open({
-      title: 'Create a new goal',
-      body: GoalForm,
-    });
+  dashboardState.init(data);
+
+  const { workouts, goals, isLoading, error } = dashboardState;
+
+  async function openGoalModal() {
+    if (browser) {
+      const { modalStore } = await import('skeleton-ui');
+      modalStore.open({
+        title: 'Create a new goal',
+        body: GoalForm,
+        bodyProps: { modalStore },
+      });
+    }
   }
 </script>
 
@@ -40,7 +54,11 @@
       </Card>
       <Card>
         <h2 class="text-xl font-bold mb-2">Goals</h2>
-        <GoalTree {goals} />
+        {#if GoalTree}
+          <svelte:component this={GoalTree} {goals} />
+        {:else}
+          <p>Loading Goal Tree...</p>
+        {/if}
       </Card>
       <div class="lg:col-span-2">
         <ProgressiveOverload {workouts} />
@@ -49,5 +67,6 @@
   {/if}
 </div>
 
-<Modal />
-
+{#if browser}
+  <Modal />
+{/if}

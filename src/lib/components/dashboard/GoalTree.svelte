@@ -2,7 +2,7 @@
 <script lang="ts">
   import { SvelteFlow, type Node, type Edge } from '@xyflow/svelte';
   import '@xyflow/svelte/dist/style.css';
-  import type { Goal } from '$lib/state/dashboard';
+  import type { Goal } from '$lib/state/dashboard.svelte';
 
   type Props = {
     goals: Goal[];

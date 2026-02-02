@@ -61,7 +61,7 @@ src/
 │   ├── services/
 │   │   └── hevy.ts
 │   └── state/
-│       └── dashboard.ts
+│       └── dashboard.svelte.ts
 ├── routes/
 │   └── +page.svelte
 └── app.html

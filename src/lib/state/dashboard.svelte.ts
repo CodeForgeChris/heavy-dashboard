@@ -1,4 +1,4 @@
-// src/lib/state/dashboard.ts
+// src/lib/state/dashboard.svelte.ts
 import { fetchWorkouts } from '../services/hevy';
 
 // Data types from data-model.md
@@ -53,16 +53,8 @@ function createDashboardState() {
     error: null,
   });
 
-  async function loadWorkouts() {
-    state.isLoading = true;
-    state.error = null;
-    try {
-      state.workouts = await fetchWorkouts();
-    } catch (e: any) {
-      state.error = e.message;
-    } finally {
-      state.isLoading = false;
-    }
+  function init(initialData: { workouts: Workout[] }) {
+    state.workouts = initialData.workouts;
   }
 
   function addGoal(goal: Omit<Goal, 'id' | 'start_date'>) {
@@ -86,7 +78,7 @@ function createDashboardState() {
     get goals() { return state.goals; },
     get isLoading() { return state.isLoading; },
     get error() { return state.error; },
-    loadWorkouts,
+    init,
     addGoal,
     updateGoal,
   };

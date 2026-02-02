@@ -1,7 +1,8 @@
 <!-- src/lib/components/dashboard/GoalForm.svelte -->
 <script lang="ts">
-  import { dashboardState, type Goal } from '$lib/state/dashboard';
-  import { modalStore } from 'skeleton-ui';
+  import { dashboardState, type Goal } from '$lib/state/dashboard.svelte';
+
+  export let modalStore: any;
 
   let goal: Partial<Goal> = {};
 

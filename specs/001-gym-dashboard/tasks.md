@@ -21,8 +21,8 @@
 
 - [x] T006 Create the Hevy API service in `src/lib/services/hevy.ts` to fetch workout data
 - [x] T007 [P] Implement authentication for the Hevy API using the API key from `.env`
-- [x] T008 [P] Define data types for workouts, exercises, and goals in `src/lib/state/dashboard.ts`
-- [x] T009 Create the dashboard state management using Svelte 5 Runes in `src/lib/state/dashboard.ts`
+- [x] T008 [P] Define data types for workouts, exercises, and goals in `src/lib/state/dashboard.svelte.ts`
+- [x] T009 Create the dashboard state management using Svelte 5 Runes in `src/lib/state/dashboard.svelte.ts`
 - [x] T010 Configure Vitest for unit and component testing
 
 ---
@@ -56,7 +56,7 @@
 
 - [x] T025 [P] [US2] Create a `GoalForm.svelte` component in `src/lib/components/dashboard/GoalForm.svelte`
 - [x] T026 [P] [US2] Create a `Modal.svelte` component in `src/lib/components/ui/Modal.svelte` to host the goal form
-- [x] T027 [US2] Add state management logic for creating and editing goals in `src/lib/state/dashboard.ts`
+- [x] T027 [US2] Add state management logic for creating and editing goals in `src/lib/state/dashboard.svelte.ts`
 - [x] T028 [US2] Add a button to the dashboard to open the goal creation modal
 - [x] T029 [US2] When a goal is created or edited, update the `GoalTree.svelte` component
 
