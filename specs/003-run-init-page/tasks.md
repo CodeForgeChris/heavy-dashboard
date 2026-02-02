@@ -12,7 +12,7 @@
 ## Phase 1: Setup (Shared Infrastructure)
 
 **Purpose**: Project initialization and basic structure
-- [ ] T001 Verify project is set up correctly by running `npm install`.
+- [X] T001 Verify project is set up correctly by running `npm install`.
 
 ---
 
@@ -24,7 +24,7 @@
 
 ### Implementation for User Story 1
 
-- [ ] T002 [US1] Modify the `dev` script in `package.json` to include the `--open` flag.
+- [X] T002 [US1] Modify the `dev` script in `package.json` to include the `--open` flag.
 
 ---
 
@@ -32,8 +32,8 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T003 Verify `npm install` and `npm run build` succeed.
-- [ ] T004 Run quickstart.md validation by following the steps in `specs/003-run-init-page/quickstart.md`.
+- [X] T003 Verify `npm install` and `npm run build` succeed.
+- [X] T004 Run quickstart.md validation by following the steps in `specs/003-run-init-page/quickstart.md`.
 
 ---
 
