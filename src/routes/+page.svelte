@@ -22,10 +22,10 @@
     GoalTree = module.default;
 
     // Populate allExerciseNames after workouts are loaded
-    dashboardState.subscribe($state => {
-      if ($state.workouts && $state.workouts.length > 0) {
+    dashboardState.subscribe(state => {
+      if (state.workouts && state.workouts.length > 0) {
         const exercises = new Set<string>();
-        $state.workouts.forEach((workout: Workout) => {
+        state.workouts.forEach((workout: Workout) => {
           workout.exercises.forEach(exercise => {
             exercises.add(exercise.name);
           });
@@ -39,8 +39,6 @@
   });
 
   dashboardState.init(data);
-
-  const { goals, isLoading, error } = dashboardState;
 
   async function openGoalModal() {
     if (browser) {
@@ -62,10 +60,10 @@
     </button>
   </div>
 
-  {#if isLoading}
+  {#if $dashboardState.isLoading}
     <p>Loading dashboard...</p>
-  {:else if error}
-    <p class="text-red-500">{error}</p>
+  {:else if $dashboardState.error}
+    <p class="text-red-500">{$dashboardState.error}</p>
   {:else}
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
       <div class="lg:col-span-2">
@@ -76,7 +74,7 @@
       <Card>
         <h2 class="text-xl font-bold mb-2">Goals</h2>
         {#if GoalTree}
-          <svelte:component this={GoalTree} {goals} />
+          <svelte:component this={GoalTree} goals={$dashboardState.goals} />
         {:else}
           <p>Loading Goal Tree...</p>
         {/if}

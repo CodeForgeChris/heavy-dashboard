@@ -1,4 +1,5 @@
 // src/lib/state/dashboard.svelte.ts
+import { writable } from 'svelte/store';
 import { fetchWorkouts } from '../services/hevy';
 
 // Data types from data-model.md
@@ -46,7 +47,7 @@ type DashboardState = {
 };
 
 function createDashboardState() {
-  const state = $state<DashboardState>({
+  const { subscribe, update } = writable<DashboardState>({
     workouts: [],
     goals: [],
     isLoading: false,
@@ -54,7 +55,7 @@ function createDashboardState() {
   });
 
   function init(initialData: { workouts: Workout[] }) {
-    state.workouts = initialData.workouts;
+    update(state => ({...state, workouts: initialData.workouts}));
   }
 
   function addGoal(goal: Omit<Goal, 'id' | 'start_date'>) {
@@ -63,21 +64,23 @@ function createDashboardState() {
       id: crypto.randomUUID(),
       start_date: new Date().toISOString(),
     };
-    state.goals.push(newGoal);
+    update(state => ({ ...state, goals: [...state.goals, newGoal] }));
   }
 
   function updateGoal(updatedGoal: Goal) {
-    const index = state.goals.findIndex(g => g.id === updatedGoal.id);
-    if (index !== -1) {
-      state.goals[index] = updatedGoal;
-    }
+    update(state => {
+      const index = state.goals.findIndex(g => g.id === updatedGoal.id);
+      if (index !== -1) {
+        const newGoals = [...state.goals];
+        newGoals[index] = updatedGoal;
+        return { ...state, goals: newGoals };
+      }
+      return state;
+    });
   }
 
   return {
-    get workouts() { return state.workouts; },
-    get goals() { return state.goals; },
-    get isLoading() { return state.isLoading; },
-    get error() { return state.error; },
+    subscribe,
     init,
     addGoal,
     updateGoal,
